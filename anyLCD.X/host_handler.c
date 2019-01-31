@@ -1,3 +1,4 @@
+#include <string.h>
 #include "mcc_generated_files/mcc.h"
 #include "host_handler.h"
 #include "framebuffer.h"
@@ -19,6 +20,7 @@ static volatile union {
 } in_commandBuffer;
 
 void in_configureHostHandler(void) {
+    memset((void*) fb_LCDframeBuffer, 0, sizeof (fb_LCDframeBuffer));
     SPI1_setExchangeHandler(in_gotSPIchar);
     IOCAF4_SetInterruptHandler(in_executeCommand);
 }

@@ -46,6 +46,12 @@
 /*
                          Main application
  */
+
+/*
+ MSSP1 - Slave SPI, input from main board
+ MSSP2 - Master SPI, output to LCD panel
+ 
+ */
 void main(void)
 {
     // initialize the device
@@ -55,10 +61,10 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();

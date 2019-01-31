@@ -42,6 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "host_handler.h"
 
 /*
                          Main application
@@ -50,7 +51,7 @@
 /*
  MSSP1 - Slave SPI, input from main board
  MSSP2 - Master SPI, output to LCD panel
- 
+ IOCA4 - RS line (data/_Command_)
  */
 void main(void)
 {
@@ -72,6 +73,9 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
+    SPI1_setExchangeHandler(in_gotSPIchar);
+    IOCAF4_SetInterruptHandler(in_executeCommand);
+    
     while (1)
     {
         // Add your application code

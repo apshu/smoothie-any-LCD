@@ -43,6 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "host_handler.h"
+#include "lcd/lcd.h"
 
 /*
                          Main application
@@ -58,6 +59,8 @@ void main(void) {
     SYSTEM_Initialize();
 
     in_configureHostHandler();
+    lcd_setup();
+    
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
@@ -74,7 +77,7 @@ void main(void) {
     //INTERRUPT_PeripheralInterruptDisable();
 
     while (1) {
-        // Add your application code
+        lcd_task();
     }
 }
 /**

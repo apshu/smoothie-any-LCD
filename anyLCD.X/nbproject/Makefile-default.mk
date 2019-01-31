@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/spi1.c mcc_generated_files/spi2.c mcc_generated_files/device_config.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c host_handler.c framebuffer.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/spi1.c mcc_generated_files/spi2.c mcc_generated_files/device_config.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c host_handler.c framebuffer.c lcd/lcd_ssd1306.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/spi1.p1 ${OBJECTDIR}/mcc_generated_files/spi2.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/interrupt_manager.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/host_handler.p1 ${OBJECTDIR}/framebuffer.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/spi1.p1.d ${OBJECTDIR}/mcc_generated_files/spi2.p1.d ${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/host_handler.p1.d ${OBJECTDIR}/framebuffer.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/spi1.p1 ${OBJECTDIR}/mcc_generated_files/spi2.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/interrupt_manager.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/host_handler.p1 ${OBJECTDIR}/framebuffer.p1 ${OBJECTDIR}/lcd/lcd_ssd1306.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/spi1.p1.d ${OBJECTDIR}/mcc_generated_files/spi2.p1.d ${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/host_handler.p1.d ${OBJECTDIR}/framebuffer.p1.d ${OBJECTDIR}/lcd/lcd_ssd1306.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/spi1.p1 ${OBJECTDIR}/mcc_generated_files/spi2.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/interrupt_manager.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/host_handler.p1 ${OBJECTDIR}/framebuffer.p1
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/spi1.p1 ${OBJECTDIR}/mcc_generated_files/spi2.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/interrupt_manager.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/host_handler.p1 ${OBJECTDIR}/framebuffer.p1 ${OBJECTDIR}/lcd/lcd_ssd1306.p1
 
 # Source Files
-SOURCEFILES=mcc_generated_files/spi1.c mcc_generated_files/spi2.c mcc_generated_files/device_config.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c host_handler.c framebuffer.c
+SOURCEFILES=mcc_generated_files/spi1.c mcc_generated_files/spi2.c mcc_generated_files/device_config.c mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c host_handler.c framebuffer.c lcd/lcd_ssd1306.c
 
 
 CFLAGS=
@@ -165,6 +165,14 @@ ${OBJECTDIR}/framebuffer.p1: framebuffer.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/framebuffer.d ${OBJECTDIR}/framebuffer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/framebuffer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/lcd/lcd_ssd1306.p1: lcd/lcd_ssd1306.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/lcd" 
+	@${RM} ${OBJECTDIR}/lcd/lcd_ssd1306.p1.d 
+	@${RM} ${OBJECTDIR}/lcd/lcd_ssd1306.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/lcd/lcd_ssd1306.p1 lcd/lcd_ssd1306.c 
+	@-${MV} ${OBJECTDIR}/lcd/lcd_ssd1306.d ${OBJECTDIR}/lcd/lcd_ssd1306.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/lcd/lcd_ssd1306.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/mcc_generated_files/spi1.p1: mcc_generated_files/spi1.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
@@ -237,6 +245,14 @@ ${OBJECTDIR}/framebuffer.p1: framebuffer.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/framebuffer.p1 framebuffer.c 
 	@-${MV} ${OBJECTDIR}/framebuffer.d ${OBJECTDIR}/framebuffer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/framebuffer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/lcd/lcd_ssd1306.p1: lcd/lcd_ssd1306.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/lcd" 
+	@${RM} ${OBJECTDIR}/lcd/lcd_ssd1306.p1.d 
+	@${RM} ${OBJECTDIR}/lcd/lcd_ssd1306.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/lcd/lcd_ssd1306.p1 lcd/lcd_ssd1306.c 
+	@-${MV} ${OBJECTDIR}/lcd/lcd_ssd1306.d ${OBJECTDIR}/lcd/lcd_ssd1306.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/lcd/lcd_ssd1306.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

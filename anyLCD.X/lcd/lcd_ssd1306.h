@@ -12,6 +12,12 @@
 extern "C" {
 #endif
 
+#define lcdSSD1306_chipSelPin(isHigh) do { } while(0)
+#define lcdSSD1306_resetPin(isHigh)   do { } while(0) 
+#define lcdSSD1306_datacmdPin(isHigh) do { } while(0)
+#define lcdSSD1306_Exchange8bitBuffer SPI2_Exchange8bitBuffer
+#define lcdSSD1306_isCommActive()     (SPI2_IsBufferFull())
+    
     void lcd_setup_ssd1306(void);
     void lcd_task_ssd1306(void);
     

@@ -12,6 +12,7 @@
 extern "C" {
 #endif
 
+    void in_configureHostHandler(void);
     uint8_t in_gotSPIchar(uint8_t dataByte);
     void in_executeCommand(void);
 

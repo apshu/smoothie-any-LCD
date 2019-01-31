@@ -18,6 +18,11 @@ static volatile union {
     };
 } in_commandBuffer;
 
+void in_configureHostHandler(void) {
+    SPI1_setExchangeHandler(in_gotSPIchar);
+    IOCAF4_SetInterruptHandler(in_executeCommand);
+}
+
 uint8_t in_gotSPIchar(uint8_t dataByte) {
     if (IO_isData_GetValue()) {
         //Data coming in

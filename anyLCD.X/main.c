@@ -16,7 +16,7 @@
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.65.2
         Device            :  PIC16F18857
         Driver Version    :  2.00
-*/
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -39,7 +39,7 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
+ */
 
 #include "mcc_generated_files/mcc.h"
 #include "host_handler.h"
@@ -53,11 +53,11 @@
  MSSP2 - Master SPI, output to LCD panel
  IOCA4 - RS line (data/_Command_)
  */
-void main(void)
-{
+void main(void) {
     // initialize the device
     SYSTEM_Initialize();
 
+    in_configureHostHandler();
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
@@ -73,14 +73,10 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
-    SPI1_setExchangeHandler(in_gotSPIchar);
-    IOCAF4_SetInterruptHandler(in_executeCommand);
-    
-    while (1)
-    {
+    while (1) {
         // Add your application code
     }
 }
 /**
  End of File
-*/
+ */
